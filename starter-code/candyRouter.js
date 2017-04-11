@@ -59,17 +59,8 @@ router.post('/', function(req, res) {
 
 // UPDATE
 router.put('/:id', function(req, res) {
-  let y = req.params.id;
-  let updateCandy = {
-    name: req.body.name,
-    color: req.body.color
-  }
-  for(var i = 0; i < candies.length; i++) {
-    if (y == candies[i].id) {
-      candies[i] = updateCandy;
-    }
-  }
- res.send(updateCandy);
+  candies[req.params.id-1]=req.body;
+  res.end();
 });
 
 // DELETE DELETE DELETE
