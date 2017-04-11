@@ -38,10 +38,10 @@ router.get('/', function(req,res) {
 router.get('/:id', function(req, res) {
   let x = req.params.id;
   for(var i = 0; candies.length; i++) {
-    if (x === candies[i].id) {
-      res.send(candies[i]);
+    if (x == candies[i].id) {
+      return(candies[i]);
     }else{
-    	res.send("error");
+    	return("error");
     }
   }
 });
@@ -65,7 +65,7 @@ router.put('/:id', function(req, res) {
     color: req.body.color
   }
   for(var i = 0; i < candies.length; i++) {
-    if (candies[i].id === y) {
+    if (y == candies[i].id) {
       candies[i] = updateCandy;
     }
   }
